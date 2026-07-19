@@ -2,6 +2,17 @@
 
 These instructions apply when working in this repository (`EnglishError`).
 
+## Archived Error Summary Routing
+
+If the user submits the keyword “总结” or “汇总” and asks to summarize, classify, consolidate, or review archived English errors, use the `english-error-summary` skill at `.agents/skills/english-error-summary/SKILL.md`.
+
+- This routing rule takes precedence over the normal root `SKILL.md` analysis workflow.
+- Read every Markdown file under the `vaultRoot` configured in `scripts/paths.config.json`.
+- Merge errors only when their underlying rule and error cause are substantively the same.
+- Include the error type, explanation, and at most 10 original error examples for each merged type.
+- Return the complete summary directly in the conversation.
+- Do not preserve source files, create staging files, run archive commands, or write the summary to Obsidian.
+
 ## When To Apply `SKILL.md`
 
 If the user's request is about English learning, wrong-answer analysis, exam questions (e.g., multiple choice, cloze, reading comprehension, error correction, writing), or producing "错题解析" style output, you must follow the guidance in `SKILL.md` by default (even if the user doesn't explicitly mention it).

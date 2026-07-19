@@ -1,0 +1,4 @@
+interface:
+  display_name: "英语错题汇总"
+  short_description: "汇总归类 Obsidian 英语错题并合并重复错误"
+  default_prompt: "使用 $english-error-summary 汇总并归类全部英语错题。"
