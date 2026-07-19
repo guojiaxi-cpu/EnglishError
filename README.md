@@ -56,6 +56,3 @@ python scripts\english_error_archive.py export-note --content-path tmp\analysis.
 ## License
 
 This project is licensed under the MIT License.
-
-## 分析讲解摘要
-
