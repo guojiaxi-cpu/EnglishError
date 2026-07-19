@@ -137,7 +137,7 @@ EnglishError/
 |-- powershell版备份/
 |-- AGENTS.md
 |-- SKILL.md
-|-- prompt_run.md
+|-- prompt_advice.md
 |-- README.md
 |-- .gitignore
 `-- LICENSE
@@ -148,10 +148,9 @@ EnglishError/
 - `scripts/paths.config.json`：本机实际路径配置；示例文件用于初始化配置。
 - `source/`：按请求保存原始图片、PDF、Word 等来源文件，不自动删除。
 - `Tmp/`：保存归档前的完整 Markdown 中间文件。配置中使用 `tmp`，Windows 文件系统不区分目录名大小写。
-- `powershell版备份/`：旧 PowerShell 工作流备份，仅供参考，不应在当前流程中调用。
 - `AGENTS.md`：项目级路由和执行规则，决定何时使用普通错题分析或独立汇总 Skill。
 - `SKILL.md`：单次英语题目识别、错误判定、讲解内容和输出格式规范。
-- `prompt_run.md`：可复用的完整错题分析与归档提示词。
+- `prompt_advice.md`：可复用的完整错题分析与归档提示词。
 
 ## 数据与安全
 
