@@ -1,0 +1,28 @@
+# Local source archives and temporary output
+source/
+tmp/
+Tmp/
+
+# Local path configuration
+scripts/paths.config.json
+powershell版备份/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment files
+.env
+.env.*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
