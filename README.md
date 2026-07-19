@@ -129,12 +129,10 @@ EnglishError/
 |               `-- collect_archived_errors.py
 |-- scripts/
 |   |-- english_error_archive.py
-|   |-- paths.config.example.json
-|   `-- paths.config.json
+|   |-- paths.config.json
 |-- source/
 |   `-- YYYY-MM-DD/HHmmss/
 |-- Tmp/
-|-- powershell版备份/
 |-- AGENTS.md
 |-- SKILL.md
 |-- prompt_advice.md
