@@ -114,11 +114,14 @@ def yaml_list(values: Iterable[str]) -> str:
     return "[" + ", ".join(items) + "]"
 
 
-def next_note_index(date_directory: Path) -> int:
+def next_note_index(date_directory: Path, date_prefix: str) -> int:
+    prefix = f"{date_prefix}-"
     indexes = [
-        int(path.stem)
+        int(path.stem.removeprefix(prefix))
         for path in date_directory.glob("*.md")
-        if path.is_file() and path.stem.isdigit()
+        if path.is_file()
+        and path.stem.startswith(prefix)
+        and path.stem.removeprefix(prefix).isdigit()
     ]
     return max(indexes, default=0) + 1
 
@@ -141,9 +144,10 @@ def export_note(
         raise ValueError(f"The Markdown content file is empty: {resolved_content}")
 
     date_text = run_date.strftime("%Y-%m-%d")
+    date_prefix = run_date.strftime("%Y%m%d")
     date_directory = vault_root / date_text
     date_directory.mkdir(parents=True, exist_ok=True)
-    note_index = next_note_index(date_directory)
+    note_index = next_note_index(date_directory, date_prefix)
 
     while True:
         index_text = f"{note_index:03d}"
@@ -164,7 +168,7 @@ def export_note(
                 "",
             )
         )
-        note_path = date_directory / f"{index_text}.md"
+        note_path = date_directory / f"{date_prefix}-{index_text}.md"
 
         try:
             with note_path.open("x", encoding="utf-8", newline="\n") as note_file:

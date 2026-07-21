@@ -59,7 +59,7 @@ When the user explicitly asks to save, record, archive, or write an English erro
 - State the complete recognized error-question list before archiving. Include marked-wrong, blank, unanswered, partially answered, and missing-keyword questions.
 - Create one independent Markdown note per analysis request, including requests that contain multiple source images.
 - Store notes in a `YYYY-MM-DD` directory based on the analysis execution date.
-- Name notes with the next daily numeric index, zero-padded to at least three digits, such as `001.md`.
+- Name notes with execution date connect '-' and connect the next daily numeric index, zero-padded to at least three digits, such as `20260723-001.md`.
 - Before archiving, write the complete analysis body as a UTF-8 Markdown staging file under the repository's `tmp` directory, never in the repository root.
 - Name staging files `tmp/obsidian-analysis-YYYY-MM-DD-HHmmss.md`. If that name exists, append `-02`, `-03`, and so on instead of overwriting it.
 - Keep staging files permanently after both successful and failed archive attempts; do not delete them automatically.
